@@ -141,7 +141,8 @@ const TextInputFlat = ({
     underlineColorCustom = 'transparent';
   } else {
     inputTextColor = colors.text;
-    activeColor = error ? colors.error : activeUnderlineColor || colors.primary;
+    // activeColor = error ? colors.error : activeUnderlineColor || colors.primary;
+    activeColor = error ? colors.error : colors.primary;
     placeholderColor = colors.placeholder;
     errorColor = colors.error;
     underlineColorCustom = underlineColor || colors.disabled;
@@ -301,7 +302,7 @@ const TextInputFlat = ({
         underlineColorCustom={underlineColorCustom}
         error={error}
         colors={colors}
-        activeColor={activeColor}
+        activeColor={activeUnderlineColor || activeColor}
       />
       <View
         style={[
